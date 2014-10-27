@@ -15,6 +15,7 @@
   </div>
   <script type="text/javascript">
   readCore();
+  var core;
   	function readCore()
 	{
 	    var rawFile = new XMLHttpRequest();
@@ -26,6 +27,7 @@
 	            if(rawFile.status === 200 || rawFile.status == 0)
 	            {
 	                var allText = rawFile.responseText;
+	                core = allText;
 	                document.getElementById("core").innerHTML = allText.asHtml();
 	            }
 	        }
