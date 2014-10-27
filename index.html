@@ -1,8 +1,37 @@
 <html>
 <head>
   <title>gSkunks</title>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+  <style>
+  * {
+  	font-family: 'PT Sans', sans-serif;
+  }
+  </style>
 </head>
 <body>
   Placeholder for gSkunks
+  <div id="core">
+  </div>
+  <script type="text/javascript">
+  readCore();
+  	function readCore()
+	{
+	    var rawFile = new XMLHttpRequest();
+	    rawFile.open("GET", "core", false);
+	    rawFile.onreadystatechange = function ()
+	    {
+	        if(rawFile.readyState === 4)
+	        {
+	            if(rawFile.status === 200 || rawFile.status == 0)
+	            {
+	                var allText = rawFile.responseText;
+	                document.getElementById("core").innerHTML = allText;
+	            }
+	        }
+	    }
+	    rawFile.send(null);
+	}
+  </script>
 </body>
 </html>
