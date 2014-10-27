@@ -27,7 +27,7 @@
 	            if(rawFile.status === 200 || rawFile.status == 0)
 	            {
 	                var allText = rawFile.responseText;
-	                core = allText.asHtml();
+	                core = allText;
 	                $("$core").html(core);
 	            }
 	        }
