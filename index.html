@@ -9,6 +9,7 @@
   }
   #core {
   	white-space: pre;
+  	width:500px;
   }
   </style>
 </head>
@@ -22,7 +23,7 @@
   	function readCore()
 	{
 	    var rawFile = new XMLHttpRequest();
-	    rawFile.open("GET", "core", false);
+	    rawFile.open("GET", "file:///Macintosh HD/Users/kiho/skunks.github.io/core", false);
 	    rawFile.onreadystatechange = function ()
 	    {
 	        if(rawFile.readyState === 4)
