@@ -27,8 +27,8 @@
 	            if(rawFile.status === 200 || rawFile.status == 0)
 	            {
 	                var allText = rawFile.responseText;
-	                core = allText;
-	                document.getElementById("core").innerHTML = allText.asHtml();
+	                core = allText.asHtml();
+	                document.getElementById("core").innerHTML = allText;
 	            }
 	        }
 	    }
