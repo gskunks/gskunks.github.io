@@ -6,24 +6,52 @@
   <style>
   * {
   	font-family: 'PT Sans', sans-serif;
+
+  }
+  h1 {
+    text-align: center;
+  }
+  h5
+  {
+    margin: 0, 0, 0, 0;
+  }
+  p {
+    margin:0;
+  }
+  em, {
+
+  }
+  blockquote {
+    background-color: rgba(0,0,0,0.2);
+    margin: 0;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    border-left: 5px solid #000000;
   }
   #core {
-  	white-space: pre;
-  	width:500px;
+  	width:60%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
   </style>
 </head>
 <body>
-  Placeholder for gSkunks
-  <div id="core">
+<xmp theme="simplex" style="display:none;">
+  <div id="core" class="wordwrap">
   </div>
+</xmp>
+
+  <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
   <script type="text/javascript">
   readCore();
   var core;
   	function readCore()
 	{
 	    var rawFile = new XMLHttpRequest();
-	    rawFile.open("GET", "file:///Macintosh HD/Users/kiho/skunks.github.io/core", false);
+	    rawFile.open("GET", "core", false);
 	    rawFile.onreadystatechange = function ()
 	    {
 	        if(rawFile.readyState === 4)
@@ -32,7 +60,7 @@
 	            {
 	                var allText = rawFile.responseText;
 	                core = allText;
-	                $("#core").text(core);
+	                $("#core").html(marked(core));
 	            }
 	        }
 	    }
