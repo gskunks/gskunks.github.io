@@ -32,6 +32,7 @@
   }
   #core {
   	width:60%;
+    min-width: 500px;
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -46,26 +47,24 @@
 
   <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
   <script type="text/javascript">
-  readCore();
-  var core;
-  	function readCore()
-	{
-	    var rawFile = new XMLHttpRequest();
-	    rawFile.open("GET", "core", false);
-	    rawFile.onreadystatechange = function ()
-	    {
-	        if(rawFile.readyState === 4)
-	        {
-	            if(rawFile.status === 200 || rawFile.status == 0)
-	            {
-	                var allText = rawFile.responseText;
-	                core = allText;
-	                $("#core").html(marked(core));
-	            }
-	        }
-	    }
-	    rawFile.send(null);
-	}
+  addFileTo("core", "core");
+  function addFileTo(filetarget, targetdiv)
+  {
+    var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", filetarget, false);
+      rawFile.onreadystatechange = function ()
+      {
+          if(rawFile.readyState === 4)
+          {
+              if(rawFile.status === 200 || rawFile.status == 0)
+              {
+                  var allText = rawFile.responseText;
+                  $("#"+targetdiv).html(marked(allText));
+              }
+          }
+      }
+      rawFile.send(null);
+  }
   </script>
 </body>
 </html>
