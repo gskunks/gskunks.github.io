@@ -70,13 +70,14 @@
       }
       rawFile.send(null);
   }
+  /* //This feature requires PHP serverside. This does not work on Github Pages
   $.ajax({
   url: 'getarticles.php',
         success: function (response) {
         $("#articles").html(marked(response));
         fixcss();
     }
-  });
+  });*/
  
   function fixcss() {
     $("hr").css("border-top","3px dotted rgba(0,0,0,0.3)");
