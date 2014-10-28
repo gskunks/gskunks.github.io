@@ -30,7 +30,10 @@
     -webkit-margin-end: 0;
     border-left: 5px solid #000000;
   }
-  #core {
+  hr {
+    border-top: 10px solid #000000;
+  }
+  #core, #articles{
   	width:60%;
     min-width: 500px;
     margin-top: 20px;
@@ -43,7 +46,8 @@
 <xmp theme="simplex" style="display:none;">
   <div id="core" class="wordwrap">
   </div>
-
+  <div id="articles" class="wordwrap">
+  </div>
 </xmp>
 
   <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
@@ -68,12 +72,15 @@
   }
   $.ajax({
   url: 'getarticles.php',
-        success: function (response) {//response is value returned from php (for your example it's "bye bye"
-        alert(response);
+        success: function (response) {
+        $("#articles").html(marked(response));
+        fixcss();
     }
   });
  
-
+  function fixcss() {
+    $("hr").css("border-top","3px dotted rgba(0,0,0,0.3)");
+  }
   </script>
 </body>
 </html>
