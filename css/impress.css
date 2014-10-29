@@ -284,6 +284,10 @@ h2 {
     font-size: 22px;
 }
 
+.footnote {
+  margin:0;
+  line-height: 0.2px;
+}
 /*
     Second step is nothing special, just a text with a link, so it doesn't need
     any special styling.
